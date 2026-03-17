@@ -161,6 +161,13 @@ SCENARIOS = [
     },
 ]
 
+# One-liner clues shown on the home screen before the game starts
+OPTION_CLUES = {
+    "rule":  ("⚙️  Rule-based Automation", "If a robot could follow a recipe blindfolded, this is your tool."),
+    "ai":    ("🤖  AI Assist (LLM / RAG)",  "When the data is messy and meaning matters — let the model read between the lines."),
+    "agent": ("🦾  Agentic AI",              "It doesn't just think — it acts. Multi-step, multi-system, no hand-holding needed."),
+}
+
 # Answer labels shown in the UI
 ANSWER_OPTIONS = {
     "rule": "⚙️  Rule-based Automation",
@@ -311,6 +318,19 @@ def render_score_sidebar():
 
 
 # ──────────────────────────────────────────────
+# PRE-GAME CLUES
+# ──────────────────────────────────────────────
+def render_option_clues():
+    st.markdown("### 💡 Peek at your options — click to reveal!")
+    cols = st.columns(3)
+    for col, (key, (label, clue)) in zip(cols, OPTION_CLUES.items()):
+        with col:
+            with st.expander(label):
+                st.markdown(f"*{clue}*")
+    st.markdown("<br>", unsafe_allow_html=True)
+
+
+# ──────────────────────────────────────────────
 # SCREEN: HOME
 # ──────────────────────────────────────────────
 def show_home():
@@ -340,6 +360,7 @@ def show_home():
         )
 
         st.markdown("<br>", unsafe_allow_html=True)
+        render_option_clues()
         name = st.text_input("🎮 Enter your name to begin:", placeholder="e.g. Alex Johnson")
 
         col_a, col_b = st.columns([1, 1])
