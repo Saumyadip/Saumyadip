@@ -342,16 +342,16 @@ def show_home():
             """
             <div style='background:#1E1E2E; border-radius:12px; padding:2rem; border:1px solid #333;'>
             <h3 style='color:#4F8BF9;'>👋 Welcome, Decision Maker!</h3>
-            <p>
+            <p style='color:#FFFFFF;'>
             In this game you'll face <b>12 real-world business scenarios</b> and
             decide which approach fits best:
             </p>
-            <ul>
+            <ul style='color:#FFFFFF;'>
             <li>⚙️ <b>Rule-based Automation</b> — structured, deterministic tasks</li>
             <li>🤖 <b>AI Assist</b> — unstructured data, language, generation</li>
             <li>🦾 <b>Agentic AI</b> — multi-step workflows that take actions</li>
             </ul>
-            <p>
+            <p style='color:#FFFFFF;'>
             Rate your <b>confidence</b> for bonus (or penalty) points. Think carefully!
             </p>
             </div>
