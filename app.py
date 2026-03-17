@@ -336,6 +336,7 @@ def render_option_clues():
 def show_home():
     render_header()
 
+    # ── Welcome card (centred narrow column) ──
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.markdown(
@@ -359,8 +360,13 @@ def show_home():
             unsafe_allow_html=True,
         )
 
-        st.markdown("<br>", unsafe_allow_html=True)
-        render_option_clues()
+    # ── Option clues — full page width so 3 columns have room ──
+    st.markdown("<br>", unsafe_allow_html=True)
+    render_option_clues()
+
+    # ── Name input + start (centred narrow column) ──
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
         name = st.text_input("🎮 Enter your name to begin:", placeholder="e.g. Alex Johnson")
 
         col_a, col_b = st.columns([1, 1])
